@@ -1,0 +1,13 @@
+<h2 align="center">Mise à jour d'un article</h2>
+
+
+Label : <input type="text" [(ngModel)]="label" class="form-control" />
+Price : <input type="text" [(ngModel)]="price" class="form-control" />
+Picture : <input type="text" [(ngModel)]="picture" class="form-control" />
+<label for="providers">Choisissez un fournisseur :</label>
+
+  <select name="providers" [(ngModel)]="idProvider">
+    <option value="">Sélectionnez un fournisseur</option>
+    <option *ngFor="let provider of providers" [value]=provider.id>{{provider.id}}.{{provider.name}}</option>
+  </select>
+<button class="btn btn-success"  (click)="updateArticle()">Mise à jour</button>

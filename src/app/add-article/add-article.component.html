@@ -1,0 +1,19 @@
+<h2 align="center">{{titre}}</h2>
+<img [src]="imgPlus" width="25px">
+
+<form #data="ngForm"  (ngSubmit)="persistArticle(idProvider, data.value)">
+
+  Label : <input type="text" ngModel class="form-control" name="label" />
+  Price : <input type="text" ngModel class="form-control" name="price" />
+  Picture : <input type="text" ngModel class="form-control" name="picture" />
+  <label for="providers">Choisissez un fournisseur :</label>
+
+  <select name="providers" [(ngModel)]="idProvider">
+    <option value="">Sélectionnez un fournisseur</option>
+    <option *ngFor="let provider of providers" [value]=provider.id>{{provider.id}}.{{provider.name}}</option>
+  </select>
+  
+
+ <button type="submit" class="btn btn-primary"  value="Ajouter" style="margin-top:5px">Ajouter<i style="margin-left:5px" class="fa fa-plus" aria-hidden="true"></i>
+ </button>
+</form>
